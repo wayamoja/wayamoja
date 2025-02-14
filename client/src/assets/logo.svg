@@ -1,14 +1,22 @@
 
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 60">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 80">
   <defs>
     <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" style="stop-color:#0066CC"/>
-      <stop offset="100%" style="stop-color:#00A3FF"/>
+      <stop offset="0%" style="stop-color:#2563eb"/>
+      <stop offset="50%" style="stop-color:#3b82f6"/>
+      <stop offset="100%" style="stop-color:#60a5fa"/>
     </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
   </defs>
-  <rect x="0" y="5" width="50" height="50" rx="10" fill="url(#logoGradient)"/>
-  <path d="M10 20 L25 30 L40 20 M10 30 L25 40 L40 30" stroke="white" stroke-width="4" fill="none" stroke-linecap="round"/>
-  <text x="65" y="40" font-family="Arial" font-size="28" font-weight="900" fill="#0066CC">WAYAMOJA</text>
-  <text x="65" y="52" font-family="Arial" font-size="14" font-weight="600" fill="#666">ENTERPRISE</text>
+  <rect x="10" y="10" width="60" height="60" rx="15" fill="url(#logoGradient)" filter="url(#glow)"/>
+  <path d="M20 30 L40 45 L60 30 M20 45 L40 60 L60 45" stroke="white" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <text x="85" y="50" font-family="Arial" font-size="32" font-weight="900" fill="#2563eb" filter="url(#glow)">WAYAMOJA</text>
+  <text x="85" y="70" font-family="Arial" font-size="16" font-weight="600" fill="#64748b">ENTERPRISE LTD</text>
 </svg>

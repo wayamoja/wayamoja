@@ -1,4 +1,7 @@
 
+import { AnimatePresence } from "framer-motion";
+
+
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
@@ -54,6 +57,25 @@ export default function Header() {
         </Link>
 
         <nav className="hidden md:flex items-center space-x-8">
+          <motion.div className="relative group">
+            <span className="cursor-pointer text-gray-300 hover:text-white">Solutions</span>
+            <motion.div 
+              className="absolute top-full left-0 bg-gray-900/95 rounded-lg py-2 px-4 min-w-[200px] backdrop-blur-sm"
+              initial={{ opacity: 0, y: -10 }}
+              whileHover={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.2 }}
+            >
+              <Link href="/services/networking">
+                <span className="block py-2 text-gray-300 hover:text-white">Enterprise Networking</span>
+              </Link>
+              <Link href="/services/security">
+                <span className="block py-2 text-gray-300 hover:text-white">Security Solutions</span>
+              </Link>
+              <Link href="/services/cloud">
+                <span className="block py-2 text-gray-300 hover:text-white">Cloud Services</span>
+              </Link>
+            </motion.div>
+          </motion.div>
           <Link href="/services">
             <span className={`cursor-pointer transition-colors ${
               isActive("/services") ? "text-blue-400" : "text-gray-300 hover:text-white"

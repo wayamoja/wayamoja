@@ -6,7 +6,13 @@ import { WavePattern } from "@/components/ui/patterns/WavePattern";
 
 export default function Hero() {
   return (
-    <div className="relative min-h-screen flex items-center">
+    <div className="relative min-h-screen flex items-center overflow-hidden">
+      <motion.div
+        className="absolute inset-0 bg-gradient-to-r from-blue-900/20 to-purple-900/20"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1.5 }}
+      />
       <WavePattern className="absolute inset-0 z-0 opacity-20" />
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
@@ -16,16 +22,16 @@ export default function Hero() {
             transition={{ duration: 0.6 }}
             className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent mb-8"
           >
-            Next-Generation Network Solutions
+            Transforming Networks, Empowering Success
           </motion.h1>
           
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="text-xl text-gray-300 mb-8"
+            className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto"
           >
-            Empowering businesses with enterprise-grade Wi-Fi and network infrastructure. Experience unparalleled connectivity with Waya Moja's cutting-edge solutions.
+            Leading the digital revolution with state-of-the-art network solutions. From enterprise Wi-Fi to advanced security systems, Waya Moja delivers unparalleled connectivity that drives your business forward. Experience the future of networking today.
           </motion.p>
 
           <motion.div
