@@ -62,9 +62,11 @@ export default function Header() {
           </Link>
         </nav>
 
-        <Button className="bg-blue-600 text-white hover:bg-blue-700">
-          Get Quote
-        </Button>
+        <Link href="/quote">
+          <Button className="bg-blue-600 text-white hover:bg-blue-700">
+            Get Quote
+          </Button>
+        </Link>
       </div>
     </motion.header>
   );
