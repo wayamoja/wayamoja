@@ -1,82 +1,64 @@
-
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { Link } from "wouter";
-import { WavePattern } from "@/components/ui/patterns/WavePattern";
+import { SearchBar } from "@/components/ui/SearchBar";
 
 export default function Hero() {
   return (
-    <div className="relative min-h-screen flex items-center overflow-hidden">
-      <motion.div
-        className="absolute inset-0 bg-gradient-to-r from-blue-900/20 to-purple-900/20"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1.5 }}
-      />
-      <WavePattern className="absolute inset-0 z-0 opacity-20" />
-      <div className="container mx-auto px-6 relative z-10">
-        <div className="max-w-4xl mx-auto text-center">
-          <motion.h1 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-blue-400 via-purple-500 to-indigo-600 bg-clip-text text-transparent mb-8 leading-tight"
-            whileInView={{ opacity: 1, y: 0 }}
-            initial={{ opacity: 0, y: 20 }}
-            viewport={{ once: true }}
-          >
-            Transforming Networks,
-            <br />
-            Empowering Success
-          </motion.h1>
-          
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-            className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto"
-          >
-            Leading the digital revolution with state-of-the-art network solutions. From enterprise Wi-Fi to advanced security systems, Waya Moja delivers unparalleled connectivity that drives your business forward. Experience the future of networking today.
-          </motion.p>
+    <section className="pt-32 pb-20 px-6">
+      <div className="container mx-auto text-center">
+        <motion.h1
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-blue-400 via-purple-500 to-indigo-600 bg-clip-text text-transparent mb-8 leading-tight"
+        >
+          Transforming Networks,
+          <br />
+          Empowering Success
+        </motion.h1>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center"
-          >
-            <Link href="/services">
-              <Button className="bg-blue-600 text-white hover:bg-blue-700 text-lg px-8 py-6">
-                Explore Solutions
-              </Button>
-            </Link>
-            <Link href="/contact">
-              <Button variant="outline" className="text-white border-white hover:bg-white/10 text-lg px-8 py-6">
-                Schedule Consultation
-              </Button>
-            </Link>
-          </motion.div>
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2, duration: 0.6 }}
+          className="text-gray-300 text-lg md:text-xl max-w-2xl mx-auto mb-8"
+        >
+          WayaMoja delivers cutting-edge network solutions that power businesses across Kenya. Experience reliable, high-speed connectivity and expert IT support.
+        </motion.p>
 
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.6 }}
-            className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-8"
-          >
-            {[
-              { label: "Projects Completed", value: "500+" },
-              { label: "Enterprise Clients", value: "200+" },
-              { label: "Network Uptime", value: "99.99%" },
-              { label: "Support Response", value: "<15min" }
-            ].map((stat) => (
-              <div key={stat.label} className="text-center">
-                <div className="text-2xl font-bold text-blue-400">{stat.value}</div>
-                <div className="text-sm text-gray-400">{stat.label}</div>
-              </div>
-            ))}
-          </motion.div>
+        <div className="mb-12">
+          <SearchBar />
+        </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.4, duration: 0.6 }}
+          className="flex flex-col md:flex-row gap-4 justify-center"
+        >
+          <Button size="lg" className="bg-blue-600 hover:bg-blue-700">
+            Get Started
+          </Button>
+          <Button size="lg" variant="outline" className="border-blue-400 text-blue-400 hover:bg-blue-400/10">
+            Learn More
+          </Button>
+        </motion.div>
+
+        <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
+          <div className="bg-gray-800/50 p-6 rounded-lg">
+            <h3 className="text-xl font-bold mb-3">Enterprise Solutions</h3>
+            <p className="text-gray-400">Customized networking solutions for businesses of all sizes.</p>
+          </div>
+          <div className="bg-gray-800/50 p-6 rounded-lg">
+            <h3 className="text-xl font-bold mb-3">24/7 Support</h3>
+            <p className="text-gray-400">Round-the-clock technical assistance and monitoring.</p>
+          </div>
+          <div className="bg-gray-800/50 p-6 rounded-lg">
+            <h3 className="text-xl font-bold mb-3">Cloud Services</h3>
+            <p className="text-gray-400">Secure and scalable cloud infrastructure solutions.</p>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
