@@ -5,7 +5,7 @@ import Features from "@/components/home/Features";
 
 export default function Home() {
   return (
-    <div className="bg-gradient-to-b from-blue-950 to-black min-h-screen">
+    <div className="bg-gradient-to-b from-blue-950 via-indigo-950 to-black min-h-screen">
       <Header />
       <main>
         <Hero />

@@ -9,7 +9,7 @@ export default function Header() {
   const backgroundColor = useTransform(
     scrollY,
     [0, 100],
-    ["rgba(0, 0, 0, 0)", "rgba(30, 58, 138, 0.9)"]
+    ["rgba(0, 0, 0, 0)", "rgba(17, 24, 39, 0.95)"]
   );
   const [isScrolled, setIsScrolled] = useState(false);
   const [location] = useLocation();

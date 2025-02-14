@@ -52,7 +52,7 @@ export default function Features() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
             >
-              <Card className="p-6 bg-blue-900/20 border-blue-800 hover:bg-blue-900/30 transition-all cursor-pointer group">
+              <Card className="p-6 bg-blue-900/20 border-blue-800 hover:bg-blue-900/30 hover:scale-105 hover:shadow-lg hover:shadow-blue-500/20 transition-all duration-300 cursor-pointer group">
                 <div className="text-4xl mb-4 group-hover:scale-110 transition-transform">
                   {feature.icon}
                 </div>
