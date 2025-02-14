@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
@@ -8,7 +9,7 @@ export default function Header() {
   const backgroundColor = useTransform(
     scrollY,
     [0, 100],
-    ["rgba(0, 0, 0, 0)", "rgba(0, 0, 0, 0.8)"]
+    ["rgba(0, 0, 0, 0)", "rgba(30, 58, 138, 0.9)"]
   );
   const [isScrolled, setIsScrolled] = useState(false);
   const [location] = useLocation();
@@ -33,36 +34,43 @@ export default function Header() {
       <div className="container mx-auto px-6 flex items-center justify-between">
         <Link href="/">
           <span className="text-2xl font-bold text-white cursor-pointer">
-            SaaS<span className="text-primary">Hub</span>
+            Waya<span className="text-blue-400">Moja</span>
           </span>
         </Link>
 
         <nav className="hidden md:flex items-center space-x-8">
-          <Link href="/resources">
+          <Link href="/services">
             <span className={`cursor-pointer transition-colors ${
-              isActive("/resources") ? "text-white" : "text-gray-300 hover:text-white"
+              isActive("/services") ? "text-blue-400" : "text-gray-300 hover:text-white"
             }`}>
-              Resources
+              Services
             </span>
           </Link>
-          <Link href="/pricing">
+          <Link href="/about">
             <span className={`cursor-pointer transition-colors ${
-              isActive("/pricing") ? "text-white" : "text-gray-300 hover:text-white"
+              isActive("/about") ? "text-blue-400" : "text-gray-300 hover:text-white"
             }`}>
-              Pricing
+              About
             </span>
           </Link>
-          <Link href="/blog">
+          <Link href="/case-studies">
             <span className={`cursor-pointer transition-colors ${
-              isActive("/blog") ? "text-white" : "text-gray-300 hover:text-white"
+              isActive("/case-studies") ? "text-blue-400" : "text-gray-300 hover:text-white"
             }`}>
-              Blog
+              Case Studies
+            </span>
+          </Link>
+          <Link href="/contact">
+            <span className={`cursor-pointer transition-colors ${
+              isActive("/contact") ? "text-blue-400" : "text-gray-300 hover:text-white"
+            }`}>
+              Contact
             </span>
           </Link>
         </nav>
 
-        <Button variant="secondary" className="bg-white text-black hover:bg-gray-100">
-          Get Started
+        <Button className="bg-blue-600 text-white hover:bg-blue-700">
+          Get Quote
         </Button>
       </div>
     </motion.header>

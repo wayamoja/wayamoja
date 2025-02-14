@@ -1,10 +1,11 @@
+
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import GridPattern from "../ui/patterns/GridPattern";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center pt-20 overflow-hidden bg-black">
+    <section className="relative min-h-screen flex items-center pt-20 overflow-hidden bg-gradient-to-b from-blue-950 to-black">
       <GridPattern />
       
       <div className="container mx-auto px-6">
@@ -18,9 +19,9 @@ export default function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2 }}
-            className="inline-block px-4 py-1.5 mb-6 text-sm font-medium bg-gray-800 text-gray-200 rounded-full"
+            className="inline-block px-4 py-1.5 mb-6 text-sm font-medium bg-blue-900/50 text-blue-200 rounded-full"
           >
-            Enterprise SaaS Platform
+            Professional Network Solutions
           </motion.span>
 
           <motion.h1
@@ -29,16 +30,16 @@ export default function Hero() {
             transition={{ delay: 0.3 }}
             className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight"
           >
-            Transform Your Business with Modern SaaS Solutions
+            Connecting Your World with Reliable Networks
           </motion.h1>
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
-            className="text-lg md:text-xl text-gray-400 mb-10"
+            className="text-lg md:text-xl text-gray-300 mb-10"
           >
-            Streamline operations, boost productivity, and scale your business with our enterprise-grade platform.
+            Expert Wi-Fi installation and network maintenance services for businesses and enterprises.
           </motion.p>
 
           <motion.div
@@ -47,11 +48,11 @@ export default function Hero() {
             transition={{ delay: 0.5 }}
             className="flex flex-col sm:flex-row gap-4 justify-center"
           >
-            <Button size="lg" className="bg-white text-black hover:bg-gray-100">
-              Start Free Trial
+            <Button size="lg" className="bg-blue-600 text-white hover:bg-blue-700">
+              Get Free Consultation
             </Button>
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
-              Schedule Demo
+            <Button size="lg" variant="outline" className="border-blue-400 text-blue-400 hover:bg-blue-900/20">
+              View Services
             </Button>
           </motion.div>
         </motion.div>
