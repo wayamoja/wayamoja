@@ -33,11 +33,12 @@ export default function Header() {
     >
       <div className="container mx-auto px-6 flex items-center justify-between">
         <Link href="/">
-          <img 
-            src="https://media.licdn.com/dms/image/v2/C4D1BAQEudQNgFXsmCA/company-background_10000/0/1615819129697/wayamoja_enterprises_limited_cover" 
-            alt="WayaMoja Logo" 
-            className="h-12 cursor-pointer"
-          />
+          <div className="flex items-center">
+            <span className="text-2xl font-bold text-white cursor-pointer">
+              Waya<span className="text-blue-400">Moja</span>
+            </span>
+            <span className="text-sm text-gray-400 ml-2">Enterprises Ltd</span>
+          </div>
         </Link>
 
         <nav className="hidden md:flex items-center space-x-8">
