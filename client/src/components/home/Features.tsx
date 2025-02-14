@@ -1,56 +1,73 @@
+
 import { motion } from "framer-motion";
-import { useInView } from "react-intersection-observer";
 import { Card } from "@/components/ui/card";
-import { Settings2, LineChart, Users, Shield } from "lucide-react";
 
 const features = [
   {
-    icon: Settings2,
-    title: "Powerful Automation",
-    description: "Streamline your workflow with intelligent automation tools"
+    title: "Enterprise Wi-Fi Solutions",
+    description: "High-density wireless networks designed for corporate environments with seamless roaming and advanced security protocols.",
+    icon: "📡",
+    details: ["802.11ax (Wi-Fi 6) Support", "Multi-SSID Configuration", "Enterprise WPA3 Security"]
   },
   {
-    icon: LineChart,
-    title: "Advanced Analytics",
-    description: "Get deep insights with real-time data visualization"
+    title: "Network Infrastructure",
+    description: "Complete end-to-end network design and implementation with redundancy and failover capabilities.",
+    icon: "🌐",
+    details: ["Structured Cabling", "Switch Configuration", "Load Balancing"]
   },
   {
-    icon: Users,
-    title: "Team Collaboration",
-    description: "Work seamlessly with your team in real-time"
+    title: "24/7 Monitoring",
+    description: "Continuous network monitoring and proactive maintenance to prevent downtime.",
+    icon: "👨‍💻",
+    details: ["Real-time Analytics", "Performance Monitoring", "Automated Alerts"]
   },
   {
-    icon: Shield,
-    title: "Enterprise Security",
-    description: "Bank-grade security to protect your sensitive data"
+    title: "Security Solutions",
+    description: "Advanced network security implementation including firewall setup and intrusion detection systems.",
+    icon: "🔒",
+    details: ["Next-Gen Firewalls", "IDS/IPS Systems", "VPN Solutions"]
   }
 ];
 
 export default function Features() {
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-    threshold: 0.1
-  });
-
   return (
-    <section ref={ref} className="py-24 bg-black">
+    <section className="py-20 bg-blue-900/20">
       <div className="container mx-auto px-6">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-3xl font-bold text-white mb-4">Our Expertise</h2>
+          <p className="text-gray-300 max-w-2xl mx-auto">
+            Delivering enterprise-grade network solutions with cutting-edge technology and unmatched reliability
+          </p>
+        </motion.div>
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {features.map((feature, index) => (
             <motion.div
-              key={index}
+              key={feature.title}
               initial={{ opacity: 0, y: 20 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.1 }}
             >
-              <Card className="p-6 bg-gray-900/50 backdrop-blur-lg border-gray-800 hover:bg-gray-900/70 transition-all duration-300">
-                <feature.icon className="w-12 h-12 text-white mb-4" />
+              <Card className="p-6 bg-blue-900/20 border-blue-800 hover:bg-blue-900/30 transition-all cursor-pointer group">
+                <div className="text-4xl mb-4 group-hover:scale-110 transition-transform">
+                  {feature.icon}
+                </div>
                 <h3 className="text-xl font-semibold text-white mb-2">
                   {feature.title}
                 </h3>
-                <p className="text-gray-400">
-                  {feature.description}
-                </p>
+                <p className="text-gray-300 mb-4">{feature.description}</p>
+                <ul className="text-gray-400 text-sm space-y-2">
+                  {feature.details.map((detail) => (
+                    <li key={detail} className="flex items-center">
+                      <span className="mr-2">→</span>
+                      {detail}
+                    </li>
+                  ))}
+                </ul>
               </Card>
             </motion.div>
           ))}
