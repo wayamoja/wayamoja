@@ -5,24 +5,24 @@ import Header from "@/components/layout/Header";
 
 const services = [
   {
-    title: "Network Installation",
-    description: "Complete network setup and infrastructure deployment for businesses of all sizes.",
-    icon: "🌐"
-  },
-  {
-    title: "Wi-Fi Solutions",
-    description: "High-performance wireless networks with enterprise-grade security.",
-    icon: "📡"
-  },
-  {
-    title: "Network Maintenance",
-    description: "24/7 monitoring and maintenance to ensure optimal network performance.",
-    icon: "🔧"
+    title: "Biometric Access Management",
+    description: "Installation of Zkteco F18 & k20 devices for secure access control.",
+    icon: "🔐"
   },
   {
     title: "Security Systems",
-    description: "Advanced network security solutions to protect your business data.",
-    icon: "🔒"
+    description: "CCTV cameras, Razer wire & Electric Fences installation and maintenance.",
+    icon: "📹"
+  },
+  {
+    title: "Internet Solutions",
+    description: "Professional internet installation and network setup services.",
+    icon: "🌐"
+  },
+  {
+    title: "Device Repair",
+    description: "Expert repair services for phones and computers.",
+    icon: "🔧"
   }
 ];
 
@@ -39,7 +39,7 @@ export default function Services() {
           >
             <h1 className="text-4xl font-bold text-white mb-6">Our Services</h1>
             <p className="text-gray-300">
-              Professional network solutions tailored to your business needs
+              Professional security and technology solutions for your business
             </p>
           </motion.div>
 
@@ -51,7 +51,7 @@ export default function Services() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
               >
-                <Card className="p-6 bg-blue-900/20 border-blue-800 hover:bg-blue-900/30 transition-colors">
+                <Card className="p-6 bg-blue-900/20 border-blue-800 hover:bg-blue-900/30 transition-all">
                   <div className="text-4xl mb-4">{service.icon}</div>
                   <h3 className="text-xl font-semibold text-white mb-2">
                     {service.title}

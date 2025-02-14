@@ -53,13 +53,6 @@ export default function Header() {
               About
             </span>
           </Link>
-          <Link href="/case-studies">
-            <span className={`cursor-pointer transition-colors ${
-              isActive("/case-studies") ? "text-blue-400" : "text-gray-300 hover:text-white"
-            }`}>
-              Case Studies
-            </span>
-          </Link>
           <Link href="/contact">
             <span className={`cursor-pointer transition-colors ${
               isActive("/contact") ? "text-blue-400" : "text-gray-300 hover:text-white"
