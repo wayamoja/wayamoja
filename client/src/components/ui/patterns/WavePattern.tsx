@@ -1,6 +1,7 @@
+
 import { motion } from "framer-motion";
 
-export default function WavePattern() {
+export function WavePattern() {
   return (
     <svg
       className="absolute inset-0 -z-10"
@@ -27,3 +28,5 @@ export default function WavePattern() {
     </svg>
   );
 }
+
+export default WavePattern;
