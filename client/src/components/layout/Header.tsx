@@ -33,12 +33,11 @@ export default function Header() {
     >
       <div className="container mx-auto px-6 flex items-center justify-between">
         <Link href="/">
-          <div className="flex items-center">
-            <span className="text-2xl font-bold text-white cursor-pointer">
-              Waya<span className="text-blue-400">Moja</span>
-            </span>
-            <span className="text-sm text-gray-400 ml-2">Enterprises Ltd</span>
-          </div>
+          <img 
+            src="/src/assets/logo.svg"
+            alt="WayaMoja Enterprise"
+            className="h-12 cursor-pointer"
+          />
         </Link>
 
         <nav className="hidden md:flex items-center space-x-8">
