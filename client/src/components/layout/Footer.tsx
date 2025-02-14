@@ -4,45 +4,78 @@ import { Link } from "wouter";
 export default function Footer() {
   return (
     <footer className="bg-gray-900 text-gray-300 py-16">
-      <div className="container mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
+      <div className="container mx-auto px-4 sm:px-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12">
           <div>
             <h3 className="text-2xl font-bold text-white mb-6">WayaMoja</h3>
-            <p className="text-gray-400">Empowering businesses through innovative network solutions and cutting-edge technology.</p>
+            <p className="text-gray-400 mb-4">Empowering businesses through innovative network solutions and cutting-edge technology.</p>
+            <div className="space-y-2">
+              <p className="flex items-center">
+                <span className="text-blue-400 mr-2">✓</span> ISO 27001 Certified
+              </p>
+              <p className="flex items-center">
+                <span className="text-blue-400 mr-2">✓</span> 24/7 Support
+              </p>
+              <p className="flex items-center">
+                <span className="text-blue-400 mr-2">✓</span> 99.9% Uptime SLA
+              </p>
+            </div>
           </div>
           
           <div>
-            <h4 className="text-lg font-semibold text-white mb-4">Solutions</h4>
-            <ul className="space-y-2">
-              <li><Link href="/services/internet"><span className="hover:text-blue-400 cursor-pointer">Internet Plans</span></Link></li>
-              <li><Link href="/services/networking"><span className="hover:text-blue-400 cursor-pointer">Enterprise Networking</span></Link></li>
-              <li><Link href="/services/security"><span className="hover:text-blue-400 cursor-pointer">Security Solutions</span></Link></li>
-              <li><Link href="/services/cloud"><span className="hover:text-blue-400 cursor-pointer">Cloud Services</span></Link></li>
+            <h4 className="text-lg font-semibold text-white mb-4">Services</h4>
+            <ul className="space-y-3">
+              <li><Link href="/services#internet"><span className="hover:text-blue-400 cursor-pointer">Internet Plans</span></Link></li>
+              <li><Link href="/services#networking"><span className="hover:text-blue-400 cursor-pointer">Enterprise Networking</span></Link></li>
+              <li><Link href="/services#security"><span className="hover:text-blue-400 cursor-pointer">Security Solutions</span></Link></li>
+              <li><Link href="/services#cloud"><span className="hover:text-blue-400 cursor-pointer">Cloud Services</span></Link></li>
+              <li><Link href="/services#support"><span className="hover:text-blue-400 cursor-pointer">Technical Support</span></Link></li>
             </ul>
           </div>
           
           <div>
             <h4 className="text-lg font-semibold text-white mb-4">Company</h4>
-            <ul className="space-y-2">
+            <ul className="space-y-3">
               <li><Link href="/about"><span className="hover:text-blue-400 cursor-pointer">About Us</span></Link></li>
               <li><Link href="/case-studies"><span className="hover:text-blue-400 cursor-pointer">Case Studies</span></Link></li>
               <li><Link href="/blog"><span className="hover:text-blue-400 cursor-pointer">Blog</span></Link></li>
               <li><Link href="/careers"><span className="hover:text-blue-400 cursor-pointer">Careers</span></Link></li>
+              <li><Link href="/partners"><span className="hover:text-blue-400 cursor-pointer">Partners</span></Link></li>
             </ul>
           </div>
           
           <div>
             <h4 className="text-lg font-semibold text-white mb-4">Contact</h4>
-            <ul className="space-y-2">
-              <li>contact@wayamoja.com</li>
-              <li>+254 700 000 000</li>
-              <li>Nairobi, Kenya</li>
+            <ul className="space-y-3">
+              <li className="flex items-center">
+                <span className="text-blue-400 mr-2">📧</span>
+                contact@wayamoja.com
+              </li>
+              <li className="flex items-center">
+                <span className="text-blue-400 mr-2">📱</span>
+                +254 700 000 000
+              </li>
+              <li className="flex items-center">
+                <span className="text-blue-400 mr-2">📍</span>
+                Nairobi, Kenya
+              </li>
+              <li className="mt-4">
+                <h5 className="text-sm font-semibold text-white mb-2">Business Hours:</h5>
+                <p className="text-sm">Mon - Fri: 8:00 AM - 6:00 PM</p>
+                <p className="text-sm">24/7 Technical Support Available</p>
+              </li>
             </ul>
           </div>
         </div>
         
-        <div className="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
-          <p>&copy; {new Date().getFullYear()} WayaMoja Enterprise Ltd. All rights reserved.</p>
+        <div className="border-t border-gray-800 mt-12 pt-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-center md:text-left">
+            <p>&copy; {new Date().getFullYear()} WayaMoja Enterprise Ltd. All rights reserved.</p>
+            <div className="flex justify-center md:justify-end space-x-4">
+              <Link href="/privacy"><span className="hover:text-blue-400 cursor-pointer">Privacy Policy</span></Link>
+              <Link href="/terms"><span className="hover:text-blue-400 cursor-pointer">Terms of Service</span></Link>
+            </div>
+          </div>
         </div>
       </div>
     </footer>

@@ -27,32 +27,6 @@ export default function Header() {
         </Link>
 
         <nav className="hidden md:flex items-center space-x-8">
-          <div className="relative group" onMouseEnter={() => setShowDropdown(true)} onMouseLeave={() => setShowDropdown(false)}>
-            <span className="cursor-pointer text-gray-300 hover:text-white">Solutions</span>
-            <AnimatePresence>
-              {showDropdown && (
-                <motion.div 
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: 10 }}
-                  className="absolute top-full left-0 bg-gray-900/95 rounded-lg py-2 px-4 min-w-[240px] backdrop-blur-sm border border-gray-800"
-                >
-                  <Link href="/services/internet">
-                    <span className="block py-2 text-gray-300 hover:text-white hover:bg-blue-600/20 px-3 rounded transition-colors">Internet Plans</span>
-                  </Link>
-                  <Link href="/services/networking">
-                    <span className="block py-2 text-gray-300 hover:text-white hover:bg-blue-600/20 px-3 rounded transition-colors">Enterprise Networking</span>
-                  </Link>
-                  <Link href="/services/security">
-                    <span className="block py-2 text-gray-300 hover:text-white hover:bg-blue-600/20 px-3 rounded transition-colors">Security Solutions</span>
-                  </Link>
-                  <Link href="/services/cloud">
-                    <span className="block py-2 text-gray-300 hover:text-white hover:bg-blue-600/20 px-3 rounded transition-colors">Cloud Services</span>
-                  </Link>
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </div>
           {[
             ['Services', '/services'],
             ['About', '/about'],
