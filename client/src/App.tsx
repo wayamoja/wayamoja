@@ -8,6 +8,8 @@ import Services from "@/pages/Services";
 import About from "@/pages/About";
 import Contact from "@/pages/Contact";
 import Quote from "@/pages/Quote";
+import { useEffect, useState } from "react";
+import LoadingScreen from "./components/ui/LoadingScreen";
 
 function Router() {
   return (
@@ -32,12 +34,22 @@ function Footer() {
 
 
 function App() {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setIsLoading(false), 2500);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
-    <QueryClientProvider client={queryClient}>
-      <Router />
-      <Toaster />
-      <Footer />
-    </QueryClientProvider>
+    <>
+      {isLoading && <LoadingScreen />}
+      <QueryClientProvider client={queryClient}>
+        <Router />
+        <Toaster />
+        <Footer />
+      </QueryClientProvider>
+    </>
   );
 }
 
