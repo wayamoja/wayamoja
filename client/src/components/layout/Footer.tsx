@@ -1,6 +1,8 @@
 
 import { Link } from "wouter";
 
+import { Facebook, Twitter, LinkedIn, Instagram, Mail, Phone, MapPin } from 'lucide-react';
+
 export default function Footer() {
   return (
     <footer className="bg-gray-900 text-gray-300 py-16">
@@ -64,7 +66,37 @@ export default function Footer() {
                 <p className="text-sm">Mon - Fri: 8:00 AM - 6:00 PM</p>
                 <p className="text-sm">24/7 Technical Support Available</p>
               </li>
+              <li className="mt-4">
+                <div className="flex space-x-4">
+                  <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors">
+                    <Facebook className="h-5 w-5" />
+                  </a>
+                  <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors">
+                    <Twitter className="h-5 w-5" />
+                  </a>
+                  <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors">
+                    <LinkedIn className="h-5 w-5" />
+                  </a>
+                  <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors">
+                    <Instagram className="h-5 w-5" />
+                  </a>
+                </div>
+              </li>
             </ul>
+          </div>
+          <div className="mt-8 border-t border-gray-800 pt-8">
+            <h4 className="text-lg font-semibold text-white mb-4">Newsletter</h4>
+            <p className="text-gray-400 mb-4">Stay updated with our latest news and offers.</p>
+            <div className="flex gap-2">
+              <input 
+                type="email" 
+                placeholder="Enter your email"
+                className="bg-gray-800 text-white px-4 py-2 rounded flex-1"
+              />
+              <button className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+                Subscribe
+              </button>
+            </div>
           </div>
         </div>
         
